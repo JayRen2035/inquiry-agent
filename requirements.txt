@@ -1,0 +1,12 @@
+# Web 框架
+fastapi>=0.110
+uvicorn[standard]>=0.27
+
+# 数据校验
+pydantic>=2.5
+
+# 读取 .env
+python-dotenv>=1.0
+
+# 大模型（可选：不装也能用规则解析）
+openai>=1.30

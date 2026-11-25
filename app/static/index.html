@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI 询盘助手 · Inquiry Agent</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">IA</div>
+      <div>
+        <h1>AI 询盘助手</h1>
+        <p class="sub">把杂乱的询盘变成结构化数据，并自动草拟回复</p>
+      </div>
+    </div>
+    <div class="stats">
+      <span>全部 <b id="s-total">0</b></span>
+      <span>已草拟 <b id="s-drafted">0</b></span>
+      <span>高优先 <b id="s-high">0</b></span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="card composer">
+      <h2>① 粘贴询盘</h2>
+      <div class="samples" id="samples"></div>
+      <textarea id="raw" placeholder="粘贴一封询盘邮件、一段微信聊天记录，或一份采购需求……"></textarea>
+      <div class="row">
+        <select id="source">
+          <option value="email">邮件</option>
+          <option value="wechat">微信 / 群聊</option>
+          <option value="pdf">PDF / 文档</option>
+          <option value="other">其他</option>
+        </select>
+        <button id="btn-extract" class="primary">解析并入库</button>
+      </div>
+      <p class="hint" id="hint">未配置大模型 Key 时，自动使用内置规则解析，仍可完整体验。</p>
+    </section>
+
+    <section class="results">
+      <div class="card list">
+        <h2>② 询盘列表</h2>
+        <div id="list" class="list-body">
+          <div class="empty">还没有询盘。点上方样例或粘贴内容开始。</div>
+        </div>
+      </div>
+      <div class="card detail" id="detail">
+        <div class="empty">← 解析一条询盘，或在列表里点选一条查看详情</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
