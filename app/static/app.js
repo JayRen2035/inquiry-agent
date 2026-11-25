@@ -77,6 +77,7 @@ async function loadList() {
     div.onclick = () => selectItem(it.id);
     box.appendChild(div);
   });
+  if (!currentId && items.length) selectItem(items[0].id);
 }
 
 function fieldHtml(k, v) {
