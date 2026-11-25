@@ -167,5 +167,3 @@ inquiry-agent/
 ## License
 
 MIT，见 [LICENSE](LICENSE)。
-
-> 使用前请把 LICENSE 里的版权人改成你自己的名字。
