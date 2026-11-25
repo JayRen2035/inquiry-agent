@@ -34,35 +34,22 @@
 ④ 一键复制，直接发给客户
 ```
 
-## 界面
+## 60 秒体验
 
-> `docs/screenshot.png` 放一张截图即可（自行添加）。左侧粘贴、右侧台账与详情，实时解析。
+只需要装 Python 3.9+（[下载](https://www.python.org/downloads/)，安装时勾选 **Add Python to PATH**），然后按你的系统选一种：
 
-## 快速开始
+| 系统 / 方式 | 一条命令 |
+| --- | --- |
+| Windows | 双击 `start.bat` |
+| macOS / Linux | `bash start.sh` |
+| 任意命令行 | `pip install -r requirements.txt` && `python run.py` |
+| Docker | `docker build -t inquiry-agent .` && `docker run -p 8000:8000 inquiry-agent` |
 
-需要 Python 3.9+。
+浏览器会自动打开 **http://127.0.0.1:8000**；如果 8000 端口被别的程序占用，会自动换一个端口，具体地址看终端里打印的那行。
 
-### 方式 1：Windows 双击
+打开后**不需要准备任何数据**：点左上角三个样例按钮中的任意一个 → 点「解析并入库」，右边立刻出现结构化字段、缺失信息和一封可直接改用的回复草稿。
 
-双击 `start.bat`，自动装依赖并启动。
-
-### 方式 2：命令行
-
-```bash
-pip install -r requirements.txt
-python run.py
-```
-
-打开浏览器访问 **http://127.0.0.1:8000**。
-
-### 方式 3：Docker
-
-```bash
-docker build -t inquiry-agent .
-docker run -p 8000:8000 inquiry-agent
-```
-
-启动后，点页面上的**样例按钮**（英文询价 / 微信群询价 / 中文采购需求）即可立即体验，无需准备数据。
+不需要申请 API Key，也不用手动建数据库：没配 Key 时自动走内置规则解析，数据库首次运行自动创建。
 
 ## 可选：接入大模型
 
