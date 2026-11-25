@@ -68,6 +68,16 @@ LLM_MODEL=deepseek-chat
 
 支持 OpenAI / DeepSeek / Kimi / 通义等任何 OpenAI 兼容服务。
 
+## 常见问题
+
+**要花钱吗？** 不用。项目本身免费，不配 Key 也能完整跑通；只有你自己主动接入大模型 API 时才会产生对应服务商的费用。
+
+**我的询盘数据会被上传吗？** 默认不会。不配 Key 时全部在本机计算，数据只写进本地的 `data/inquiries.db`。只有你配置了 `LLM_API_KEY`，询盘文本才会发给你指定的那家模型服务商。
+
+**数据存在哪？怎么清空？** 存在 `data/inquiries.db`。直接删掉这个文件，下次启动会自动重建一个空库。
+
+**端口 8000 被占用怎么办？** 不用管，会自动换到 8001、8002……，终端里会打印实际地址。
+
 ## 工作原理
 
 ```text
@@ -121,11 +131,13 @@ LLM_MODEL=deepseek-chat
 
 ```text
 inquiry-agent/
-├── run.py                  # 一键启动
+├── run.py                  # 一键启动（自动选端口、自动开浏览器）
 ├── start.bat               # Windows 双击启动
+├── start.sh                # macOS / Linux 启动
 ├── requirements.txt
 ├── .env.example            # 大模型配置模板
 ├── Dockerfile
+├── docs/screenshot.png     # 界面截图
 ├── samples/                # 样例询盘（可直接体验）
 ├── data/                   # SQLite 数据库（自动生成，已 gitignore）
 └── app/
